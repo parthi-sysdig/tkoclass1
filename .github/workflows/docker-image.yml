@@ -17,11 +17,11 @@ jobs:
       run: docker build . --file Dockerfile --tag tkoclass1/hellocontainer:v1
       
     - name: Download Scanner
-      run: curl -LO "https://download.sysdig.com/scanning/bin/sysdig-cli-scanner/$(curl -L -s https://download.sysdig.com/scanning/sysdig-cli-scanner/latest_version.txt)/linux/amd64/sysdig-cli-scanner"
+      run: /
+           curl -LO "https://download.sysdig.com/scanning/bin/sysdig-cli-scanner/$(curl -L -s https://download.sysdig.com/scanning/sysdig-cli-scanner/latest_version.txt)/linux/amd64/sysdig-cli-scanner"
 
-    - name: Grant Exec Permission
-      run: chmod +x ./sysdig-cli-scanner 
+#   - name: Grant Exec Permission
+           chmod +x ./sysdig-cli-scanner 
       
-    - name: Scan image
-      run: SECURE_API_TOKEN=5288f6c4-2e4e-4be9-8e98-f62ab548a233 ./sysdig-cli-scanner --apiurl https://us2.app.sysdig.com tkoclass1/hellocontainer:v1
-    
+#   - name: Scan image
+           SECURE_API_TOKEN=5288f6c4-2e4e-4be9-8e98-f62ab548a233 ./sysdig-cli-scanner --apiurl https://us2.app.sysdig.com tkoclass1/hellocontainer:v1
